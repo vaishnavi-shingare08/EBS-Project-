@@ -1,4 +1,5 @@
-# EBS_project
+EBS_project
+
 🏥 Insured – Health Insurance Claim Management System
 
 A web-based Health Insurance Claim Management System built using Python Django and deployed on AWS Elastic Beanstalk, with RDS MySQL as the backend database.
@@ -18,33 +19,57 @@ Integrated EC2 connectivity
 Secure & scalable cloud deployment
 
 🧰 Tech Stack
-Layer	Technology
-Backend	Python, Django
-Frontend	HTML, CSS
-Database	MySQL (AWS RDS)
-Cloud	AWS Elastic Beanstalk, EC2, RDS
-Web Server	Nginx
-Version Control	Git & GitHub
+
+Layer
+
+Technology
+
+Backend
+
+Python, Django
+
+Frontend
+
+HTML, CSS
+
+Database
+
+MySQL (AWS RDS)
+
+Cloud
+
+AWS Elastic Beanstalk, EC2, RDS
+
+Web Server
+
+Nginx
+
+Version Control
+
+Git & GitHub
+
 📂 Project Structure
-insured/
-│
-├── .ebextensions/
-│   └── django.config
-├── static/
-├── insured/
-│   └── application.py
-├── requirements.txt
-├── insured.sql
-├── nginx.conf
-└── manage.py
+
+insured/                  
+├── .ebextensions/        
+│   └── django.config     
+├── static/               
+├── insured/              
+│   └── application.py    
+├── requirements.txt      
+├── insured.sql           
+├── nginx.conf            
+└── manage.py             
 
 🧑‍💻 How to Run Locally
+
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 
 ☁️ AWS Deployment Steps
-1️⃣ Create RDS Database
+
+Create RDS Database
 
 Engine: MySQL
 
@@ -58,7 +83,8 @@ Public Access: No
 
 Save endpoint, username, password
 
-2️⃣ Create Database Table
+Create Database Table
+
 CREATE DATABASE IF NOT EXISTS insured;
 USE insured;
 
@@ -71,16 +97,16 @@ CREATE TABLE IF NOT EXISTS claims (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-3️⃣ Configure Django Database
+Configure Django Database
 
 In django.config / settings:
 
-DB_HOST = '<RDS-ENDPOINT>'
+DB_HOST = ''
 DB_NAME = 'insured'
-DB_USER = '<USERNAME>'
-DB_PASSWORD = '<PASSWORD>'
+DB_USER = ''
+DB_PASSWORD = ''
 
-4️⃣ Create Elastic Beanstalk Application
+Create Elastic Beanstalk Application
 
 Platform: Python
 
@@ -94,11 +120,12 @@ Allow EC2 traffic
 
 Upload project zip
 
-5️⃣ Connect EC2 to RDS
-sudo yum install mariadb105 -y
-mysql -h <endpoint> -P 3306 -u <user> -p
+Connect EC2 to RDS
 
-6️⃣ Deploy Application
+sudo yum install mariadb105 -y
+mysql -h <endpoint> -P 3306 -u <username> -p
+
+Deploy Application
 
 Go to Elastic Beanstalk
 
@@ -116,14 +143,17 @@ Data stored in RDS
 
 Confirmation message:
 
-Claim submitted successfully. Our executives will call you shortly!
+"Claim submitted successfully. Our executives will call you shortly!"
 
 📸 Screenshots
 
-✔ Claim form
-✔ AWS deployment
-✔ Successful claim submission
-✔ Database records in MySQL
+Claim form
+
+AWS deployment
+
+Successful claim submission
+
+Database records in MySQL
 
 🧹 Cleanup
 
@@ -135,9 +165,6 @@ Delete RDS instance
 
 Terminate EC2 instance
 
-
 🧑‍🎓 Author
 
-Vaishnavi Rajendra Shingare
-Cloud & Python Developer
-AWS | Django | MySQL | DevOps
+Vaishnavi Rajendra Shingare Cloud & Python Developer AWS | Django | MySQL | DevOps
